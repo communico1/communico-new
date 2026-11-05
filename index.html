@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html lang="it">
+      <!-- Collegamento al Manifest della PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Script per attivare l'installazione dell'App -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log('Service Worker Registrato con successo!', reg))
+        .catch(err => console.error('Errore durante la registrazione del Service Worker:', err));
+    }
+  </script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
