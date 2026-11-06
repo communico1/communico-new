@@ -1,7 +1,7 @@
 {
   "name": "Communico",
   "short_name": "Communico",
-  "start_url": "index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#002F6C",
   "theme_color": "#002F6C",
