@@ -1,46 +1,39 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Communico App</title>
-
-  <!-- Collegamento al Manifest della PWA -->
+      <!-- Collegamento al Manifest della PWA -->
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#00469c">
+  <meta name="theme-color" content="#000000">
 
   <!-- Script per attivare l'installazione dell'App -->
   <script>
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js')
-          .then(reg => console.log('Service Worker Registrato con successo!', reg))
-          .catch(err => console.error('Errore durante la registrazione del Service Worker:', err));
-      });
+      navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log('Service Worker Registrato con successo!', reg))
+        .catch(err => console.error('Errore durante la registrazione del Service Worker:', err));
     }
   </script>
 
-  <!-- Tailwind CSS per la grafica -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communico App</title>
+    <!-- Tailwind CSS for modern responsive styling -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-
-  <style>
-    body {
-        background-color: #002F6C;
-        color: #FFD700;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    }
-    .bg-custom-blue { background-color: #002F6C; }
-    .text-custom-yellow { color: #FFD700; }
-    .border-custom-yellow { border-color: #FFD700; }
-    
-    /* Custom scrollbar for look and feel */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #002F6C; }
-    ::-webkit-scrollbar-track-thumb { background: #FFD700; border-radius: 3px; }
-  </style>
-</head>
-
+    <style>
+        body {
+            background-color: #002F6C;
+            color: #FFD700;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        .bg-custom-blue { background-color: #002F6C; }
+        .text-custom-yellow { color: #FFD700; }
+        .border-custom-yellow { border-color: #FFD700; }
+        
+        /* Custom scrollbar for look and feel */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #002F6C; }
+        ::-webkit-scrollbar-thumb { background: #FFD700; border-radius: 3px; }
+    </style>
 </head>
 <body class="min-h-screen pb-12">
 
@@ -64,7 +57,7 @@
         <!-- DYNAMIC MESSAGE OF THE DAY / MESSAGGIO DEL GIORNO -->
         <div class="border-2 border-custom-yellow p-4 rounded-xl text-center bg-blue-950/40 shadow-lg">
             <div class="text-xs uppercase tracking-wider opacity-70 mb-1">📢 PASSA A ILIAD 📲</div>
-            <div class="text-lg font-bold italic">📢 SPID PEC FIRMA 📢</div>
+            <div class="text-lg font-bold italic">📢 SPID PEC FIRMA DIGITALE 📢</div>
         </div>
 
         <!-- DYNAMIC EXCHANGE RATES / TASSI DI CAMBIO -->
@@ -75,7 +68,7 @@
             <div class="grid grid-cols-2 gap-3 text-sm font-semibold">
                 <div class="flex items-center justify-between p-2 rounded bg-blue-900/30">
                     <span>🇧🇩 Bangladesh</span>
-                    <span id class="font-mono text-base bg-blue-900 px-2 py-0.5 rounded border border-custom-yellow/20">145,60</span>
+                    <span id class="font-mono text-base bg-blue-900 px-2 py-0.5 rounded border border-custom-yellow/20">140,60</span>
                 </div>
                 <div class="flex items-center justify-between p-2 rounded bg-blue-900/30">
                     <span>🇵🇰 Pakistan</span>
